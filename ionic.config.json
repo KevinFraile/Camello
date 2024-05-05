@@ -1,0 +1,7 @@
+{
+  "name": "Camello",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
