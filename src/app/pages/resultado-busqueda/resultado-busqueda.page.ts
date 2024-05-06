@@ -57,8 +57,6 @@ export class ResultadoBusquedaPage implements OnInit {
 
   ngOnInit() {
     this.palabraUrl = this.route.snapshot.paramMap.get('palabra')!;
-    console.log(this.palabraUrl); // Esto mostrará el valor del parámetro 'id' en la consola
-
     this.buscar(this.palabraUrl)
 
   }
@@ -66,7 +64,9 @@ export class ResultadoBusquedaPage implements OnInit {
   buscar(palabra:string){
     this.load = true
     this.palabraUrl = palabra
-    this.servicio = this.serviciosAll.filter(profesional => profesional.profesion.toLowerCase().includes(this.palabraUrl));
+    console.log(this.palabraUrl);
+    
+    this.servicio = this.serviciosAll.filter(profesional => profesional.profesion.toLowerCase().includes(this.palabraUrl.toLowerCase()));
     this.load = false
   }
 
