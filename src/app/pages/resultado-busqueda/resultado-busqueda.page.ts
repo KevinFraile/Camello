@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultadoBusquedaPage implements OnInit {
 
-  palabra:string = ''
+  palabraUrl:string = ''
 
   serviciosAll = [
     {
@@ -51,13 +51,23 @@ export class ResultadoBusquedaPage implements OnInit {
 
   servicio:any = []
 
+  load = false
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.palabra = this.route.snapshot.paramMap.get('palabra')!;
-    console.log(this.palabra); // Esto mostrará el valor del parámetro 'id' en la consola
+    this.palabraUrl = this.route.snapshot.paramMap.get('palabra')!;
+    console.log(this.palabraUrl); // Esto mostrará el valor del parámetro 'id' en la consola
 
-    this.servicio = this.serviciosAll.filter(profesional => profesional.profesion.toLowerCase().includes(this.palabra));
+    this.buscar(this.palabraUrl)
+
+  }
+
+  buscar(palabra:string){
+    this.load = true
+    this.palabraUrl = palabra
+    this.servicio = this.serviciosAll.filter(profesional => profesional.profesion.toLowerCase().includes(this.palabraUrl));
+    this.load = false
   }
 
 }

@@ -19,12 +19,12 @@
     <img id="mancha_3" src="../../assets/fondo/Vector 3.svg" alt="">
 
 
-    <div class="row">
+    <div *ngIf="load == false" class="row">
       <div class="col-12">
         <div class="search-container">
           <div class="search">
-            <input type="text" placeholder="Buscar..." [value]="palabra">
-            <button><ion-icon class="colorPrimary" name="search"></ion-icon></button>
+            <input #palabra type="text" placeholder="Buscar..." [value]="palabraUrl">
+            <button (click)="buscar(palabra.value)"><ion-icon class="colorPrimary" name="search"></ion-icon></button>
           </div>
 
         </div>
