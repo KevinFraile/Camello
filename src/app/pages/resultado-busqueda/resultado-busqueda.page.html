@@ -1,0 +1,61 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="contenedor">
+
+    <div class="position-relative">
+        <ion-buttons class="p-3 position-absolute top-0 start-0" slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+      </div>
+
+    <app-menu></app-menu>
+
+    <img id="mancha_1" src="../../assets/fondo/Vector 1.svg" alt="">
+    <br>
+    <img id="mancha_2" src="../../assets/fondo/Vector 2.svg" alt="">
+    <br>
+    <img id="mancha_3" src="../../assets/fondo/Vector 3.svg" alt="">
+
+
+    <div class="row">
+      <div class="col-12">
+        <div class="search-container">
+          <div class="search">
+            <input type="text" placeholder="Buscar..." [value]="palabra">
+            <button><ion-icon class="colorPrimary" name="search"></ion-icon></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 px-4">
+      <div class="col-12 p-3" *ngFor="let servicio of servicio">
+        <div class="row cardServicio">
+          <div class="col-5 p-0 m-0">
+            <ion-img class="imagenServicio" [src]="servicio.imagen"></ion-img>
+          </div>
+          <div class="col-7 p-1 m-0 mb-4">
+            <h4 class="textProfesion">{{servicio.profesion}}</h4>
+            <h6 class="textNombre">{{servicio.nombre}}</h6>
+
+            <div class="calificacionEstrellas">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</ion-content>
