@@ -8,6 +8,7 @@ import { PagesPageRoutingModule } from './pages-routing.module';
 
 import { PagesPage } from './pages.page';
 import { MenuComponent } from '../componentes/menu/menu.component';
+import { ComponetesModule } from '../componentes/componentes.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { MenuComponent } from '../componentes/menu/menu.component';
     FormsModule,
     IonicModule,
     PagesPageRoutingModule,
-    
+    ComponetesModule
   ],
   declarations: [PagesPage]
 })

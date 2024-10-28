@@ -1,152 +1,120 @@
-#mancha_1 {
-    position: absolute;
-    top: -10px;
-    right: -5px;
-    z-index: -1;
-
-}
-
-#mancha_2 {
-    position: absolute;
-    top: 10vh;
-    left: 4px;
-    z-index: -1;
-
-}
-
-#mancha_3 {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    z-index: -1;
-
-}
-
-.search-container {
-
-    margin-top: 30px;
-
-    padding: 6vw;
-    padding-top: 2px;
-    padding-bottom: 0px;
-    width: 100%;
+/* General */
+.login-container {
     display: flex;
-
-}
-
-.search-container input {
-    all: unset;
-    width: 100%;
-    background-color: white;
-    font-weight: bold;
-    padding: 2px;
-}
-
-.search-container input::placeholder {
-    color: #77CAA2;
-}
-
-.search-container button {
-    all: unset;
-
-}
-
-.search {
-    border-radius: 10px;
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    padding: 8px;
-    width: 100%;
-    -webkit-box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
-    -moz-box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
-    box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
-}
-
-.carousel-container {
-    padding: 0 6vw 0 6vw;
-    margin-top: 30px;
-    position: relative;
-}
-
-
-.indicators {
-    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 10px;
-}
-
-.indicator {
-    width: 16px;
-    height: 5px;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.indicator.active {
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Oscurecer el indicador activo */
-}
-
-
-.slide {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    
-}
-
-.slide img {
-   
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 20px;
-
-}
-
-.paddingPage{
-    padding: 0 6vw 0 6vw;
-}
-
-.cardServicio{
+    height: 100vh;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Logo */
+  .logo {
     background-color: #77CAA2;
-    padding:0px;
-    height: 100%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
--moz-box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
-box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
-position: relative;
-}
-
-.imagenServicio{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-
-.textProfesion{
-    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 60px;
+  }
+  
+  /* Title */
+  h2 {
+    color: #333;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
-    color: white;
-}
-
-.textNombre{
-    font-size: 0.8rem;
-    margin-top: 8px;
-    color: white;
-    font-weight: lighter;
-}
-
-.calificacionEstrellas{
+    margin-bottom: 20px;
+  }
+  
+  /* Input Container */
+  .input-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: visible;
+  
+  }
+  
+  .input-container ion-icon {
     position: absolute;
-    bottom: 0;
-    font-size: 0.8rem;
-    right: 7px;
-    color: white;
-}
+    top: 12px;
+    left: 15px;
+    color: #a2a2a2;
+    font-size: 18px;
+    
+  }
+  
+  input {
+    width: 100%;
+    margin-left: 5px;
+    padding: 10px 10px 10px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #333;
+    background-color: white;
+    transition: all 0.5s;   
+  }
+
+  
+  
+  input::placeholder {
+    color: #a2a2a2;
+   
+  }
+
+
+
+  input:focus {
+
+    -webkit-box-shadow: 3px 4px 4px 2px rgba(119, 202, 162, 0.814);
+    -moz-box-shadow: 3px 4px 4px 2px rgba(119,202,162,0.814);
+    box-shadow: 3px 4px 4px 2px rgba(119,202,162,0.814);
+    color: #77CAA2;
+  }
+
+  .input-container:focus-within ion-icon {
+    color: #77CAA2;
+  }
+  
+  
+  /* Button */
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #77CAA2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-button:hover {
+    background-color: #0cad5f;
+  }
+  
+  /* Forgot Password */
+  .forgot-password {
+    color: #77CAA2;
+    font-size: 14px;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  

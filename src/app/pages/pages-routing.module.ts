@@ -12,7 +12,11 @@ const routes: Routes = [
   {
     path: 'resultado-busqueda/:palabra',
     loadChildren: () => import('./resultado-busqueda/resultado-busqueda.module').then( m => m.ResultadoBusquedaPageModule)
+  },  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+
 
  
 

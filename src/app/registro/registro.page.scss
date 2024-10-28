@@ -1,0 +1,166 @@
+
+/* General */
+
+.contenedor{
+    overflow-y: auto;
+}
+.registration-container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+ 
+}
+
+/* Logo */
+.logo {
+    background-color: #77CAA2;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+/* Title */
+h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Input Container */
+.input-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-container label ion-icon[name="person-circle-outline"],
+.input-container label ion-icon[name="mail"],
+.input-container label ion-icon[name="calendar"],
+.input-container label ion-icon[name="id-card"],
+.input-container label ion-icon[name="call"],
+.input-container label ion-icon[name="lock-closed"]{
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: #a2a2a2;
+    font-size: 18px;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-left: 5px;
+    padding: 10px 10px 10px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #333;
+    background-color: white;
+    transition: all 0.5s;   
+}
+
+input::placeholder {
+    color: #a2a2a2;
+}
+
+input:focus {
+    -webkit-box-shadow: 3px 4px 4px 2px rgba(119, 202, 162, 0.814);
+    -moz-box-shadow: 3px 4px 4px 2px rgba(119,202,162,0.814);
+    box-shadow: 3px 4px 4px 2px rgba(119,202,162,0.814);
+    color: #77CAA2;
+}
+
+.input-container:focus-within ion-icon {
+    color: #77CAA2;
+}
+
+/* Button */
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #77CAA2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: #0cad5f;
+}
+
+/* Login Redirect */
+.login-redirect {
+    color: #77CAA2;
+    font-size: 14px;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.login-redirect:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para la etiqueta del archivo */
+.file-upload-label {
+    display: flex;
+    flex-direction: column; /* Para apilar el ícono y el texto */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border: 2px dashed #77CAA2; /* Línea de borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f8f9fa; /* Color de fondo */
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves */
+}
+
+.file-upload-label:hover {
+    background-color: #eaeaea; /* Color de fondo al pasar el mouse */
+    border-color: #0cad5f; /* Cambia el color del borde al pasar el mouse */
+}
+
+/* Estilo para el ícono */
+.file-upload-label ion-icon {
+    font-size: 40px;
+    color: #77CAA2; 
+    margin-top: -5px;
+}
+
+.file-upload-label span {
+    color: #61c896;
+}
+
+/* Ocultar el input de archivo */
+input[type="file"] {
+    display: none; /* Ocultar el input para usar el estilo del label */
+}
+
+.shield-checkmark-outline{
+    font-size: 80px;
+    color: #069650;
+    margin-top: -5px;
+}

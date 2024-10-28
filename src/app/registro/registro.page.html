@@ -1,0 +1,118 @@
+<div class="contenedor">
+  <div class="registration-container">
+    <div class="logo">
+      <img src="assets/logoBlancoCamello.png" alt="Logo" />
+    </div>
+    <h2>REGISTRO</h2>
+    <form class="contenedorRegistro" (ngSubmit)="onRegister()">
+      
+      <div class="input-container">
+        <label for="username">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <input
+            type="text"
+            id="username"
+            placeholder="Nombre de Usuario"
+            [(ngModel)]="username"
+            name="username"
+            required
+          />
+        </label>
+      </div>
+  
+      <div class="input-container">
+        <label for="Contraseña">
+          <ion-icon name="lock-closed"></ion-icon>
+          <input
+            type="password"
+            id="Contraseña"
+            placeholder="Contraseña"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </label>
+      </div>
+      <div class="input-container">
+        <label for="email">
+          <ion-icon name="mail"></ion-icon>
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo Electrónico"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </label>
+      </div>
+      <div class="input-container">
+        <label for="birthdate">
+          <ion-icon name="calendar"></ion-icon>
+          <input
+            placeholder="Edad"
+            type="number"
+            id="birthdate"
+            [(ngModel)]="birthdate"
+            name="birthdate"
+            required
+          />
+        </label>
+      </div>
+      <div class="input-container">
+        <label for="cedula">
+          <ion-icon name="id-card"></ion-icon>
+          <input
+            type="text"
+            id="cedula"
+            placeholder="Cédula (DNI)"
+            [(ngModel)]="cedula"
+            name="cedula"
+            required
+          />
+        </label>
+      </div>
+      <div class="input-container">
+        <label for="phone">
+          <ion-icon name="call"></ion-icon>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Teléfono"
+            [(ngModel)]="phone"
+            name="phone"
+            required
+          />
+        </label>
+      </div>
+      <div (click)="foto('front')" class="input-container">
+        <label for="frontIdPhoto" class="file-upload-label">
+          <ion-icon name="camera" *ngIf="frontIdPhoto == undefined"></ion-icon>
+          <ion-icon *ngIf="frontIdPhoto != undefined" name="shield-checkmark-outline"></ion-icon>
+          <span>Foto Frontal de la Cédula</span>
+        </label>
+        
+      </div>
+      <div (click)="foto('back')" class="input-container">
+        <label for="backIdPhoto" class="file-upload-label">
+          <ion-icon name="camera" *ngIf="backIdPhoto == undefined"></ion-icon>
+          <ion-icon *ngIf="backIdPhoto != undefined" name="shield-checkmark-outline"></ion-icon>
+          <span>Foto Trasera de la Cédula</span>
+        </label>
+  
+      </div>
+      <div (click)="foto('selfie')" class="input-container">
+        <label for="selfieWithId" class="file-upload-label">
+          <ion-icon name="camera" *ngIf="selfieWithId == undefined"></ion-icon>
+          <ion-icon *ngIf="selfieWithId != undefined" name="shield-checkmark-outline"></ion-icon>
+          <span>Foto con la Cédula</span>
+        </label>
+  
+      </div>
+      
+      <button type="submit" class="register-button">Registrarse</button>
+      <a routerLink="/login" class="login-redirect">¿Ya tienes una cuenta? Inicia sesión</a>
+    </form>
+  </div>
+</div>
+

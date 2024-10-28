@@ -1,0 +1,159 @@
+#mancha_1 {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    z-index: -1;
+
+}
+
+#mancha_2 {
+    position: absolute;
+    top: 10vh;
+    left: 4px;
+    z-index: -1;
+
+}
+
+#mancha_3 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+
+}
+
+.search-container {
+
+    margin-top: 30px;
+
+    padding: 6vw;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    width: 100%;
+    display: flex;
+
+}
+
+.search-container input {
+    all: unset;
+    width: 100%;
+    background-color: white;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.search-container input::placeholder {
+    color: #77CAA2;
+}
+
+.search-container button {
+    all: unset;
+
+}
+
+.search {
+    border-radius: 10px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    width: 100%;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
+    box-shadow: 0px 3px 8px 0px rgba(161, 161, 161, 1);
+}
+
+.carousel-container {
+    padding: 0 6vw 0 6vw;
+    margin-top: 30px;
+    position: relative;
+}
+
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 16px;
+    height: 5px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Oscurecer el indicador activo */
+}
+
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    
+}
+
+.slide img {
+   
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+.paddingPage{
+    padding: 0 6vw 0 6vw;
+}
+
+.cardServicio{
+    background-color: #77CAA2;
+    padding:0px;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
+-moz-box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
+box-shadow: 0px 0px 11px -1px rgba(143,143,143,1);
+position: relative;
+}
+
+.imagenServicio{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.textProfesion{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.textNombre{
+    font-size: 0.8rem;
+    margin-top: 8px;
+    color: white;
+    font-weight: lighter;
+}
+
+.calificacionEstrellas{
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+    right: 7px;
+    color: white;
+}
+
+@media (min-width: 630px) {
+    .contenedor .vistaPc{
+        padding-left: 22vw !important;
+        padding-right: 22vw !important;
+    }
+}

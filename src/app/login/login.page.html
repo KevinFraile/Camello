@@ -1,75 +1,37 @@
-<ion-header [translucent]="true">
-  
-</ion-header>
-
-<ion-content [fullscreen]="true">
- 
-  <div class="contenedor">
-    
-    <app-menu></app-menu>
-    
-    <img id="mancha_1" src="../../assets/fondo/Vector 1.svg" alt="">
-    <br>
-    <img id="mancha_2" src="../../assets/fondo/Vector 2.svg" alt="">
-    <br>
-    <img id="mancha_3" src="../../assets/fondo/Vector 3.svg" alt="">
-
-
-    <div class="row">
-      <div class="col-12">
-        <div class="search-container">
-          <div class="search">
-            <input #palabra  type="text" placeholder="Buscar...">
-            <button (click)="buscar(palabra.value)"><ion-icon class="colorPrimary" name="search"></ion-icon></button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <div class="carousel-container">
-          <div class="carousel">
-            <div class="slide" *ngFor="let image of images; let i = index">
-              <img [src]="image" alt="Slide" *ngIf="currentIndex === i">
-            </div>
-          </div>
-          <div class="indicators">
-            <div class="indicator" *ngFor="let image of images; let i = index" [class.active]="currentIndex === i" (click)="goToSlide(i)"></div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="row mt-4 px-4">
-      <div class="col-6 p-3" *ngFor="let servicio of serviciosMejorCalificados">
-        <div class="row cardServicio">
-          <div class="col-5 p-0 m-0">
-            <ion-img class="imagenServicio" [src]="servicio.imagen"></ion-img>
-          </div>
-          <div class="col-7 p-1 m-0 mb-4">
-            <h4 class="textProfesion">{{servicio.profesion}}</h4>
-            <h6 class="textNombre">{{servicio.nombre}}</h6>
-
-            <div class="calificacionEstrellas">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-            
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+<div class="login-container">
+  <div class="logo">
+    <img src="assets/logoBlancoCamello.png" alt="Logo" />
   </div>
-
-
-
-</ion-content>
+  <h2>BIENVENIDO</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-container">
+      <label for="username">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <input
+          type="text"
+          id="username"
+          placeholder="Usuario"
+          [(ngModel)]="username"
+          name="username"
+          required
+        />
+      </label>
+    </div>
+    <div class="input-container">
+      <label for="password">
+        <ion-icon name="lock-closed"></ion-icon>
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </label>
+    </div>
+    <button type="submit" class="login-button">Ingresar</button>
+    <!-- <a href="#" class="forgot-password">¿Ha olvidado su contraseña?</a> -->
+    <a routerLink="/registro" class="forgot-password">¿No tienes una cuenta? Registrate aquí</a>
+  </form>
+</div>
