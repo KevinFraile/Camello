@@ -9,13 +9,15 @@
   top: 0;
   left: -250px;
   width: 250px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease;
   height: 100vh;
   z-index: 1000;
 }
+
+
 
 .menu.open {
   left: 0;
@@ -58,6 +60,23 @@
 
 }
 
-.btnCerrar{
+.btnCerrar {
   font-size: 1.5rem;
+  color: #77CAA2;
+  background-color: #ffffff;
+}
+
+.submenu {
+  margin: 3px;
+  margin-top: 10px;
+  padding: 4px;
+  border-bottom: dotted 2px #77CAA2;
+  font-weight: bolder;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+}
+
+.submenu ion-icon {
+  color: #77CAA2;
 }

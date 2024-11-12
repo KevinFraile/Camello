@@ -1,3 +1,6 @@
+
+<app-loader *ngIf="loader"></app-loader>
+
 <div class="login-container">
   <div class="logo">
     <img src="assets/logoBlancoCamello.png" alt="Logo" />
@@ -8,9 +11,9 @@
       <label for="username">
         <ion-icon name="person-circle-outline"></ion-icon>
         <input
-          type="text"
+          type="email"
           id="username"
-          placeholder="Usuario"
+          placeholder="Correo"
           [(ngModel)]="username"
           name="username"
           required

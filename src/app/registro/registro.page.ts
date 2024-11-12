@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { UserService } from '../service/user.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -9,6 +10,8 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage {
+
+  loader = true
 
   username: string = '';
   password: string = '';
@@ -21,10 +24,17 @@ export class RegistroPage {
   selfieWithId!: string;
 
 
-  constructor(private userService: UserService, private toastController: ToastController) { }
+  constructor(private userService: UserService, private toastController: ToastController, private router:Router) { 
+    setTimeout(() => {
+      this.loader = false
+    }, 1000);
+    
+  }
 
 
   onRegister() {
+
+    this.loader = true
 
     // Validación de que los campos no estén vacíos
     if (
@@ -32,15 +42,22 @@ export class RegistroPage {
       this.username.trim() === '' ||
       this.password.trim() === '' ||
       this.email.trim() === '' ||
-      this.birthdate > 17 ||
       this.cedula.trim() === '' ||
       this.phone.trim() === '' ||
-      !this.frontIdPhoto ||
-      !this.backIdPhoto ||
-      !this.selfieWithId
+      this.frontIdPhoto == undefined ||
+      this.backIdPhoto == undefined ||
+      this.selfieWithId == undefined
     ) {
-      console.error('Todos los campos son obligatorios.');
+
+      this.loader = false
+      this.presentToast('top', 'Todos los campos son obligatorios.', "danger")
       return;
+    } else if (this.birthdate < 17) {
+
+      this.loader = false
+      this.presentToast('top', 'Debes ser mayor de edad para registrarte.', "danger")
+      return;
+
     } else {
 
       // JSON con los datos del usuario a enviar al backend
@@ -58,8 +75,13 @@ export class RegistroPage {
 
       this.userService.registrar(register).subscribe((res: any) => {
         this.presentToast('top', res.message, "success")
-      }, err =>{
-        this.presentToast('top', 'Ha ocurrido un error.', "danger")
+        this.router.navigate(['/login'])
+        this.loader = false
+        
+      }, err => {
+        this.loader = false
+        this.presentToast('top', 'Ha ocurrido un error es posible que este correo electrónico ya esté asociado a una cuenta existente.', "danger")
+        
       })
     }
 
@@ -72,7 +94,7 @@ export class RegistroPage {
 
 
     const image = await Camera.getPhoto({
-      quality: 30,
+      quality: 20,
       allowEditing: false,
       resultType: CameraResultType.Base64,
     });
@@ -99,7 +121,7 @@ export class RegistroPage {
   async presentToast(position: 'top' | 'middle' | 'bottom', message: string, color: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 1500,
+      duration: 5500,
       position: position,
       color: color
     });

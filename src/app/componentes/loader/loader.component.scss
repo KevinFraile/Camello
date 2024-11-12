@@ -1,0 +1,90 @@
+.contenedorLoader{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 100000000;
+
+}
+
+.loader {
+    width: 65px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.loader:before{
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px inset #77CAA2;
+    animation: l5 3.5s infinite;
+    background-color: #77CAA2;
+
+}
+.loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px inset #77CAA2;
+    animation: l5 3.5s infinite;
+   
+}
+
+.loader:after {
+    animation-delay: -1.75s;
+    border-radius: 3px;
+}
+
+@keyframes l5 {
+    0% {
+        inset: 0 35px 35px 0
+    }
+
+    12.5% {
+        inset: 0 35px 0 0
+    }
+
+    25% {
+        inset: 35px 35px 0 0
+    }
+
+    37.5% {
+        inset: 35px 0 0 0
+    }
+
+    50% {
+        inset: 35px 0 0 35px
+    }
+
+    62.5% {
+        inset: 0 0 0 35px
+    }
+
+    75% {
+        inset: 0 0 35px 35px
+    }
+
+    87.5% {
+        inset: 0 0 35px 0
+    }
+
+    100% {
+        inset: 0 35px 35px 0
+    }
+}

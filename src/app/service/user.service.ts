@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+  URL = 'https://zlock.com.co:4250'
+
   constructor(private http: HttpClient) {
   }
 
@@ -20,8 +22,18 @@ export class UserService {
   registrar(body:any) {
 
 
-    let query = `https://zlock.com.co:4250/camello/register`
+    let query = `${this.URL}/camello/register`
     return this.http.post(query, body, {})
   }
+
+  login(correo:string, contrasena: string){
+    // let headers = new HttpHeaders({
+    //   'Authorization': `Bearer ${token}`
+    // })
+
+    const query = `${this.URL}/camello/login`
+    return this.http.post(query, { correo, contrasena })
+  }
+
 
 }

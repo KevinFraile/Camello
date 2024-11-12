@@ -1,14 +1,33 @@
 <ion-header [translucent]="true">
-  
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+
+  <div *ngIf="tutorialBuscador" class="tutorialFondo">
+    <div class="tutorialContent animate__animated animate__fadeInRight">
+      Aquí podrás encontrar los servicios que más te interesen, simplemente buscando por palabras clave.
+      <button class="next" (click)="pasarTutorial('Card')"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialCard" class="tutorialFondo">
+    <div class="tutorialContent animate__animated animate__fadeInDown">
+      Aquí podrás ver la información de algunos servicios recomendados, incluyendo la profesión, nombre y calificaciones.
+      <button class="next" (click)="pasarTutorial('Todo')"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+    </div>
+  </div>
+
+
   <div class="contenedor">
-    
+
+    <h4 class="welcome-message">
+      <span class="welcome-name">¡Hola, {{nombre_user}}! <br></span> Bienvenido a Camello.
+    </h4>
+
     <app-menu></app-menu>
-    
-    
+
+
     <img id="mancha_1" src="../../assets/fondo/Vector 1.svg" alt="">
     <br>
     <img id="mancha_2" src="../../assets/fondo/Vector 2.svg" alt="">
@@ -18,12 +37,12 @@
 
     <div class="row vistaPc">
       <div class="col-12">
-        <div class="search-container">
+        <div class="search-container ">
           <div class="search">
-            <input #palabra  type="text" placeholder="Buscar...">
+            <input #palabra type="text" placeholder="Buscar...">
             <button (click)="buscar(palabra.value)"><ion-icon class="colorPrimary" name="search"></ion-icon></button>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -37,11 +56,12 @@
             </div>
           </div>
           <div class="indicators">
-            <div class="indicator" *ngFor="let image of images; let i = index" [class.active]="currentIndex === i" (click)="goToSlide(i)"></div>
+            <div class="indicator" *ngFor="let image of images; let i = index" [class.active]="currentIndex === i"
+              (click)="goToSlide(i)"></div>
           </div>
         </div>
       </div>
-      
+
     </div>
 
     <div class="row mt-4 px-4 vistaPc">
@@ -61,8 +81,8 @@
               <ion-icon name="star-outline"></ion-icon>
               <ion-icon name="star-outline"></ion-icon>
             </div>
-            
-            
+
+
           </div>
         </div>
       </div>

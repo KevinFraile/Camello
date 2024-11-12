@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
+  tutorialBuscador = true
+  tutorialCard = false
+
   
   images: string[] = [
     'https://avecan.es/wp-content/uploads/2023/06/Pintura_Avecan.jpg',
@@ -16,6 +19,7 @@ export class HomePage implements OnInit {
   ];
   currentIndex: number = 0;
 
+  nombre_user = ''
 
   serviciosMejorCalificados = [
     {
@@ -61,6 +65,22 @@ export class HomePage implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
+
+    this.nombre_user = localStorage.getItem('user_name')!
+
+    let primeraVez = localStorage.getItem('primeraVez')
+
+    console.log(primeraVez);
+    
+
+    if (primeraVez == null) {
+      this.tutorialBuscador = true
+      localStorage.setItem('primeraVez', "1")
+      
+    }else{
+      this.tutorialBuscador = false
+    }
+    
   }
 
   goToSlide(index: number) {
@@ -71,6 +91,30 @@ export class HomePage implements OnInit {
     this.router.navigateByUrl('/pages/resultado-busqueda/' + palabra)
 
   }
+
+  pasarTutorial(next:string){
+
+    if (next == 'Card') {
+
+      let search:any = document.querySelector('.search-container')
+      search.style.zIndex = 0;
+
+
+      let cardServicio:any = document.querySelector('.cardServicio')
+      cardServicio.style.zIndex = 10;
+
+
+      this.tutorialBuscador = false
+      this.tutorialCard = true
+    }
+
+    if (next == 'Todo') {
+      this.tutorialBuscador = false
+      this.tutorialCard = false
+    }
+    
+  }
+
 
 }
 
